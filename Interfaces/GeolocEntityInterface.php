@@ -27,19 +27,19 @@ interface GeolocEntityInterface {
      * @param float $latitude
      * @return self
      */
-    public function setLatitude(float $latitude) : self;
+    public function setLatitude(float $latitude);
 
     /**
      *
      * @param float $longitude
      * @return self
      */
-    public function setLongitude(float $longitude) : self;
+    public function setLongitude(float $longitude);
 
     /**
      *
      * @param string $address
      * @return self
      */
-    public function setAddress(string $address) : self;
+    public function setAddress(string $address);
 }
