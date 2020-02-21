@@ -5,7 +5,7 @@ namespace nlib\Geoloc\Entity;
 use nlib\Geoloc\Interfaces\GeolocEntityInterface;
 use nlib\Orm\Classes\Entity;
 
-class GeolocEntity extends Entity implements GeolocEntityInterface {
+class GeolocEntity extends Entity implements GeolocEntityInterface, \JsonSerializable {
 
     private $_latitude;
     private $_longitude;
@@ -32,4 +32,6 @@ class GeolocEntity extends Entity implements GeolocEntityInterface {
     public function setFormattedAddress(string $formattedaddress) : self { $this->_formattedaddress = $formattedaddress; return $this; }
     
     #endregion
+
+    public function jsonSerialize() { return $this->__getProperties(get_object_vars($this), true); }
 }
