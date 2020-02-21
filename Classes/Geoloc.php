@@ -33,7 +33,8 @@ class Geoloc implements GeolocInterface {
                 
                 $entity->setLatitude($res['results'][0]['geometry']['location']['lat'] ?? 0)
                 ->setLongitude($res['results'][0]['geometry']['location']['lng'] ?? 0)
-                ->setAddress($res['results'][0]['formatted_address'] ?? '');
+                ->setFormattedAddress($res['results'][0]['formatted_address'] ?? '')
+                ->setAddress($address);
                 
             else :
                 $a = urldecode($address);
