@@ -18,9 +18,21 @@ interface GeolocEntityInterface {
 
     /**
      *
+     * @return array
+     */
+    public function getMaps() : array;
+
+    /**
+     *
      * @return string
      */
     public function getAddress() : string;
+
+    /**
+     *
+     * @return string
+     */
+    public function getFormattedAddress() : string;
     
     /**
      *
@@ -38,8 +50,22 @@ interface GeolocEntityInterface {
 
     /**
      *
+     * @param array $maps
+     * @return self
+     */
+    public function setMaps(array $maps);
+
+    /**
+     *
      * @param string $address
      * @return self
      */
     public function setAddress(string $address);
+
+    /**
+     *
+     * @param string $formattedaddress
+     * @return self
+     */
+    public function setFormattedAddress(string $formattedaddress);
 }

@@ -9,6 +9,7 @@ class GeolocEntity extends Entity implements GeolocEntityInterface {
 
     private $_latitude;
     private $_longitude;
+    private $_maps = [];
     private $_address;
     private $_formattedaddress;
 
@@ -16,6 +17,7 @@ class GeolocEntity extends Entity implements GeolocEntityInterface {
     
     public function getLatitude() : float { return $this->_latitude; }
     public function getLongitude() : float { return $this->_longitude; }
+    public function getMaps() : array { return $this->_maps; }
     public function getAddress() : string { return $this->_address; }
     public function getFormattedAddress() : string { return $this->_formattedaddress; }
     
@@ -23,8 +25,9 @@ class GeolocEntity extends Entity implements GeolocEntityInterface {
 
     #region Setter
     
-    public function setLatitude(float $latitude) : self { $this->_latitude = $latitude; return $this; }
-    public function setLongitude(float $longitude) : self { $this->_longitude = $longitude; return $this; }
+    public function setLatitude(float $latitude) : self  { $this->_latitude = $latitude; $this->_maps['lat'] = $latitude; return $this; }
+    public function setLongitude(float $longitude) : self  { $this->_longitude = $longitude; $this->_maps['lng'] = $longitude; return $this; }
+    public function setMaps(array $maps) : self { $this->_maps = $maps; return $this; }
     public function setAddress(string $address) : self { $this->_address = $address; return $this; }
     public function setFormattedAddress(string $formattedaddress) : self { $this->_formattedaddress = $formattedaddress; return $this; }
     
