@@ -24,8 +24,8 @@ class Geoloc implements GeolocInterface {
 
         if(!empty($address) && !empty($googleapisKey)) :
         
-            $address = urlencode($address);
-            $url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $address . '&key=' . $googleapisKey;
+            $encoding_address = urlencode($address);
+            $url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $encoding_address . '&key=' . $googleapisKey;
 
             $res = json_decode($this->cURL($url)->get(), true);
             
@@ -37,8 +37,7 @@ class Geoloc implements GeolocInterface {
                 ->setAddress($address);
                 
             else :
-                $a = urldecode($address);
-                $this->log(['Geoloc - error' => $res['status'] . ' "' . $a . '"']);
+                $this->log(['Geoloc - error' => $res['status'] . ' "' . $address . '"']);
             endif;
         endif;
 
