@@ -11,7 +11,7 @@ trait GeolocTrait {
     #region Getter
 
     public function Geoloc() : Geoloc {
-        if(empty($this->_geoloc)) $this->setcURL(new Geoloc());
+        if(empty($this->_geoloc)) $this->setGeoloc(new Geoloc());
         return $this->_geoloc;
     }
 
