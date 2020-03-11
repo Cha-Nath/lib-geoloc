@@ -6,6 +6,12 @@ interface GeolocEntityInterface {
     
     /**
      *
+     * @return integer
+     */
+    public function getGeolocID() : int;
+
+    /**
+     *
      * @return float
      */
     public function getLatitude() : float;
@@ -34,6 +40,13 @@ interface GeolocEntityInterface {
      */
     public function getFormattedAddress() : string;
     
+    /**
+     *
+     * @param integer $geolocid
+     * @return self
+     */
+    public function setGeolocID(int $geolocid);
+
     /**
      *
      * @param float $latitude
