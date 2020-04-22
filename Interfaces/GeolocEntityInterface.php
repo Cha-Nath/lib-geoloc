@@ -12,15 +12,15 @@ interface GeolocEntityInterface {
 
     /**
      *
-     * @return float
+     * @return float|null
      */
-    public function getLatitude() : float;
+    public function getLatitude() : ?float;
 
-    /**
-     *
-     * @return float
-     */
-    public function getLongitude() : float;
+   /**
+    *
+    * @return float|null
+    */
+    public function getLongitude() : ?float;
 
     /**
      *
@@ -30,15 +30,15 @@ interface GeolocEntityInterface {
 
     /**
      *
-     * @return string
+     * @return string|null
      */
-    public function getAddress() : string;
+    public function getAddress() : ?string;
 
     /**
      *
-     * @return string
+     * @return string|null
      */
-    public function getFormattedAddress() : string;
+    public function getFormattedAddress() : ?string;
     
     /**
      *
@@ -49,17 +49,17 @@ interface GeolocEntityInterface {
 
     /**
      *
-     * @param float $latitude
+     * @param float|null $latitude
      * @return self
      */
-    public function setLatitude(float $latitude);
+    public function setLatitude(?float $latitude);
 
     /**
      *
-     * @param float $longitude
+     * @param float|null $longitude
      * @return self
      */
-    public function setLongitude(float $longitude);
+    public function setLongitude(?float $longitude);
 
     /**
      *
@@ -70,15 +70,15 @@ interface GeolocEntityInterface {
 
     /**
      *
-     * @param string $address
+     * @param string|null $address
      * @return self
      */
-    public function setAddress(string $address);
+    public function setAddress(?string $address);
 
     /**
      *
-     * @param string $formattedaddress
+     * @param string|null $formattedaddress
      * @return self
      */
-    public function setFormattedAddress(string $formattedaddress);
+    public function setFormattedAddress(?string $formattedaddress);
 }
