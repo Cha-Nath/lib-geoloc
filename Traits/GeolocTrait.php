@@ -11,8 +11,9 @@ trait GeolocTrait {
     #region Getter
 
     public function Geoloc() : Geoloc {
+        $instance = (method_exists($this, $method = '_i')) ? $this->{$method}() : 'i';
         if(empty($this->_geoloc)) $this->setGeoloc(new Geoloc());
-        return $this->_geoloc;
+        return $this->_geoloc->setInstance($instance);
     }
 
     #endregion

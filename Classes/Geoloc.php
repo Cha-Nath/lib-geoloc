@@ -5,6 +5,7 @@ namespace nlib\Geoloc\Classes;
 use nlib\Geoloc\Interfaces\GeolocInterface;
 use nlib\Geoloc\Entity\GeolocEntity;
 use nlib\cURL\Traits\cURLTrait;
+use nlib\Instance\Traits\InstanceTrait;
 use nlib\Log\Traits\LogTrait;
 use nlib\Orm\Traits\EntityTrait;
 
@@ -13,6 +14,7 @@ class Geoloc implements GeolocInterface {
     use LogTrait;
     use EntityTrait;
     use cURLTrait;
+    use InstanceTrait;
 
     public function geoloc(string $address, string $googleapisKey) : GeolocEntity {
 
@@ -27,7 +29,7 @@ class Geoloc implements GeolocInterface {
             $encoding_address = urlencode($address);
             $url = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . $encoding_address . '&key=' . $googleapisKey;
 
-            $res = json_decode($this->cURL($url)->get(), true);
+            $res = json_decode($this->cURL($url)->setInstance($this->_i())->get(), true);
             
             if($res['status'] === 'OK') :
                 
