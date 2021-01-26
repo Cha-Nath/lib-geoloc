@@ -2,6 +2,8 @@
 
 namespace nlib\Geoloc\Entity;
 
+use nlib\Geoloc\Interfaces\CountryEntityInterface;
+
 class CountryEntity implements CountryEntityInterface {
 
     private $_countryid;
