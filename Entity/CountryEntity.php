@@ -3,8 +3,9 @@
 namespace nlib\Geoloc\Entity;
 
 use nlib\Geoloc\Interfaces\CountryEntityInterface;
+use nlib\Orm\Classes\Entity;
 
-class CountryEntity implements CountryEntityInterface {
+class CountryEntity extends Entity implements CountryEntityInterface {
 
     private $_countryid;
     private $_alpha2;

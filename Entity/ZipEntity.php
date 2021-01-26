@@ -3,8 +3,9 @@
 namespace nlib\Geoloc\Entity;
 
 use nlib\Geoloc\Interfaces\ZipEntityInterface;
+use nlib\Orm\Classes\Entity;
 
-class ZipEntity implements ZipEntityInterface {
+class ZipEntity extends Entity implements ZipEntityInterface {
 
     private $_zipid;
     private $_zip;
